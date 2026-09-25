@@ -1,14 +1,18 @@
-CREATE TABLE student
-(
-studentID int(5)PRIMARY KEY,
-STUDENTnAME VARCHAR(20)NOT NULL,
-DOB DATE DEFAULT NULL,
-Gender VARCHAR(10)NOT NULL,
-DepartmentID int(5),
-CONSTRAINT UQ_studentName UNIQUE(studentName),
-CONSTRAINT FK_Department
-FOREIGN KEY(DepartmentID)
-references Department(DEPARTMENTID)
-);
-desc student;
+CREATE DATABASE IF NOT EXISTS assignmentdb;
 
+USE assignmentdb;
+
+CREATE TABLE IF NOT EXISTS Student (
+    StudentID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Age INT,
+    Department VARCHAR(50)
+);
+
+INSERT INTO Student (StudentID, Name, Age, Department)
+VALUES
+(1, 'Arun', 20, 'Computer Science'),
+(2, 'Kumar', 21, 'B.Sc CS'),
+(3, 'Siva', 19, 'IT');
+
+SELECT * FROM Student;
